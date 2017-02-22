@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercice_8</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form>
+            <label for="age">Votre âge : </label><input type="text" id="age" name="age"/><br/>
+            <button id="valider" name="valider" onClick="check()">Valider</button>
+        </form>
+        <script>
+            function check() {
+              // La variable récupère la valeur entrée par l'utilisateur.
+              var age = parseInt(document.getElementById("age").value);
+              // Si l'utilisateur a entre 18 et 130 ans, affiche "Vous êtes majeur."
+              if (age >= 18 && age <= 130) {
+                alert("Vous êtes majeur.");
+              }
+              // Si il a entre 0 et 17 ans, affiche "Vous êtes mineur."
+              else if (age < 18 && age >= 0) {
+                alert("Vous êtes mineur.");
+              }
+              /* S'il entre autre chose qu'un nombre compris entre 0 et 130,
+              affiche "Veuillez entrer votre âge réel." */
+              else if (isNaN(age) || age < 0) {
+                alert("Veuillez entrer votre âge réel.");
+              }
+
+            };
+        </script>
+    </body>
+</html>
